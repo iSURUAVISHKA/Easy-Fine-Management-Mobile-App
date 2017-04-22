@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color='primary'>
+    <ion-title>
+        Road Fines
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="goHome()">
+          <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines class="item">
+
+  <ion-item *ngFor="let fine of fines">
+    <ion-label>{{fine.name}}</ion-label>
+    <ion-checkbox [(ngModel)]="fine.status" color="dark"></ion-checkbox>
+  </ion-item>
+</ion-list>
+
+  <ion-card>
+  <ion-card-header>
+    Total(Rs):
+  </ion-card-header>
+
+  <ion-card-content>
+    {{getSum(fines)}}
+  </ion-card-content>
+</ion-card>
+</ion-content>
