@@ -3,7 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
-import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management.ts';
+import { FineManagement } from "../pages/shared/fine-management";
 
 
 @Component({

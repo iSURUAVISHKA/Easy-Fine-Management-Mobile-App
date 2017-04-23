@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavParams, LoadingController, NavController } from 'ionic-angular';
-import { ContactPage } from '/Users/isuruavishka/finemgt/src/pages/contact/contact.ts';
-import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management';
+import { ContactPage } from '../contact/contact.ts';
 import { HttpModule } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { FineManagement } from "../shared/fine-management";
 
 @Component({
   selector: 'page-home',
