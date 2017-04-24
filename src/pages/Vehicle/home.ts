@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import { NavParams, LoadingController, NavController } from 'ionic-angular';
+// <<<<<<< HEAD:src/pages/Vehicle/home.ts
 import { ContactPage } from '/Users/isuruavishka/finemgt/src/pages/fine-form/contact.ts';
-import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management';
+// import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management';
 import { HomeScreen } from '/Users/isuruavishka/finemgt/src/pages/home-screen/home-screen.ts';
+// =======
+// import { ContactPage } from '../contact/contact.ts';
+// >>>>>>> a8cbc240d7be66406b942283567d5ae1f3727cf7:src/pages/home/home.ts
 import { HttpModule } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { FineManagement } from "../shared/fine-management";
 
 @Component({
   selector: 'page-home',

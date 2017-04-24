@@ -11,6 +11,8 @@ import { DriverRecord } from '/Users/isuruavishka/finemgt/src/pages/driver-recor
 import { RecordInfo } from '/Users/isuruavishka/finemgt/src/pages/record-information/record-information.ts';
 import { AutoCompleteModule } from 'ionic2-auto-complete';
 import { BrowserModule } from '@angular/platform-browser';
+import { ViewRecordsPage } from "../pages/view-records/view-records";
+import { ReportsPage } from "../pages/reports/reports";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import { BrowserModule } from '@angular/platform-browser';
     HomeScreen,
     DriverRecord,
     TabsPageK ,
-    RecordInfo
+    RecordInfo,
+    ViewRecordsPage,
+    ReportsPage,
+    TabsPage
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,9 @@ import { BrowserModule } from '@angular/platform-browser';
     HomeScreen,
     DriverRecord,
     TabsPageK,
-    RecordInfo
+    RecordInfo,
+    ViewRecordsPage,
+    ReportsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

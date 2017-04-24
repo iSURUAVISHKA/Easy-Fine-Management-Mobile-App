@@ -4,7 +4,8 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomeScreen } from '../pages/home-screen/home-screen';
-import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management.ts';
+// import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management.ts';
+import { FineManagement } from "../pages/shared/fine-management";
 
 
 @Component({

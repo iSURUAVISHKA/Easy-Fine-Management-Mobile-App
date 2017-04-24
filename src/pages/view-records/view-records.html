@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar color='primary'>
+        <ion-title>View Records</ion-title>
+        <ion-buttons end>
+            <button (click)="goHome()">
+          <ion-icon name="home"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="grid-basic-page">
+    <ion-list>
+        <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            {{ item.value }}
+        </ion-item>
+    </ion-list>
+
+    <!--<ion-grid>
+        <ion-row>
+            <div padding>
+                <button ion-button icon-right color='secondary'>Send
+          <ion-icon name="mail"></ion-icon>
+        </button>
+            </div>
+
+            <div padding>
+                <button ion-button icon-right block color='primary'>Reset
+          <ion-icon name="refresh-circle"></ion-icon>
+        </button>
+            </div>
+        </ion-row>
+    </ion-grid>-->
+</ion-content>
