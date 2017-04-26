@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '/Users/isuruavishka/finemgt/src/pages/Vehicle/home';
-import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
-import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
+import { TabsPage } from "../tabs/tabs";
+import { TabsPageK } from "../tabs-k/tabs";
+// import { HomePage } from '/Users/isuruavishka/finemgt/src/pages/Vehicle/home';
+// import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
+// import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
 
 @Component({
   selector: 'page-home',
