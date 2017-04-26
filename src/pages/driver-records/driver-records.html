@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar color='theme1'>
+    <ion-title>Driver Records Management</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding class="bar">
+
+  <!--div class="Background1"></div-->
+  <ion-card-content fixed color='theme2'>
+    <p>Enter the driver licence number in the search bar given below to get the driver details</p>
+  </ion-card-content>
+
+  <ion-auto-complete [dataProvider]="completeTestService" (itemSelected)="loadSelection($event)" #searchbar></ion-auto-complete>
+  <ion-list *ngFor="let item of results">
+    <ion-item color='theme2' >
+      <ion-label floating>NIC no:</ion-label>
+      <ion-input type="text" [(ngModel)]="item.NIC">{{item.NIC}}</ion-input>
+    </ion-item>
+
+    <ion-item color='theme3'>
+      <ion-label floating>Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="item.name">{{item.name}}</ion-input>
+    </ion-item>
+
+    <ion-item color='theme2'>
+      <ion-label floating>Address:</ion-label>
+      <ion-input type="area" [(ngModel)]="item.address">{{item.address}}></ion-input>
+    </ion-item>
+
+    <ion-item color='theme3'>
+      <ion-label floating>Contact No:</ion-label>
+      <ion-input type="text" [(ngModel)]="item.contact">{{item.contact}}></ion-input>
+
+    </ion-item>
+
+  </ion-list>
+
+
+
+  <!--<div class="row">
+      <div class="col" ><b>History of the drivers</b></div>
+    </div>
+     
+    <div class="row">
+      <div class="col"><b>Date</b></div>
+      <div class="col"><b>Broken Law</b></div>
+      <div class="col"><b>Penalty points</b></div>
+    </div>-->
+
+  <div class="row">
+    <div class="col"><b>History of the drivers</b></div>
+  </div>
+  <table class="fullwidth">
+      <tr class="row">
+        <th class="col"><b>Date</b></th>
+        <th class="col"><b>Broken Law</b></th>
+        <th class="col"><b>Penalty points</b></th>
+      </tr>
+        <tr class="row" *ngFor="let item of results">
+        <td class="col"><b>{{item.date}}</b></td>
+        <td class="col"><b>{{item.brokenlaw}}</b></td>
+        <td class="col"><b>{{item.penalitypoints}}</b></td>
+      </tr>
+  </table>
+
+
+</ion-content>
