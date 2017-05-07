@@ -7,33 +7,46 @@
 </ion-header>
 
 <ion-content padding>
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      <button ion-button icon-only (click)="itemTapped($event, item)" class="submit-btn">
+  <ion-grid class="grid">
+    <ion-row id="r" class="slides">
+      <ion-col id="c" >
+        <ion-slides (ionSlideDidChange)="slideChanged()" pager autoplay="2000">
+          <ion-slide *ngFor="let a of pics">
+            <h1><img [src]="a.url"></h1>
+
+          </ion-slide>
+
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid2">
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-only (click)="itemTapped($event, item)" class="submit-btn">
         <ion-icon name="home" class="i"></ion-icon>
       </button>
-    </ion-col>
+      </ion-col>
 
-    <ion-col>
-      <button ion-button icon-only (click)="itemTapped1($event, item)" class="submit-btn">
+      <ion-col>
+        <button ion-button icon-only (click)="itemTapped1($event, item)" class="submit-btn">
         <ion-icon name="home"></ion-icon>
      </button>
-    </ion-col>
-  </ion-row>
+      </ion-col>
+    </ion-row>
 
     <ion-row>
-    <ion-col>
-      <button ion-button icon-only (click)="itemTapped2($event, item)" class="submit-btn">
+      <ion-col>
+        <button ion-button icon-only (click)="itemTapped2($event, item)" class="submit-btn">
         <ion-icon name="home" class="i"></ion-icon>
       </button>
-    </ion-col>
+      </ion-col>
 
-    <ion-col>
-      <button ion-button icon-only (click)="itemTapped3($event, item)" class="submit-btn">
+      <ion-col>
+        <button ion-button icon-only (click)="itemTapped3($event, item)" class="submit-btn">
         <ion-icon name="home"></ion-icon>
      </button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

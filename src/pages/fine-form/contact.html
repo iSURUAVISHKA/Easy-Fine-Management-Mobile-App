@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color='primary'>
-    <ion-title>Grid</ion-title>
+    <ion-title>Fine Management</ion-title>
     <ion-buttons end>
       <button (click)="goHome()">
           <ion-icon name="home"></ion-icon>
@@ -12,9 +12,10 @@
 <ion-content class="grid-basic-page">
 <ion-list>
 
+  <h1>{{ userId }}</h1>
   <ion-item>
     <ion-label floating>Licence No:</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" required [(ngModel)]="licenseNo"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -24,12 +25,17 @@
 
   <ion-item>
     <ion-label floating>Fine:</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="fineNames"></ion-input>
   </ion-item>
+
+<ion-item>
+  <ion-label floating>Penality Points:</ion-label>
+  <ion-input type="text" [(ngModel)]="points"></ion-input>
+</ion-item>
 
   <ion-item>
     <ion-label floating>Amount:</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="amount"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -40,8 +46,12 @@
   <ion-item>
     <ion-label floating>Police Station:</ion-label>
     <ion-input type="text"></ion-input>
-  </ion-item>
+  </ion-item><br/>
 
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
 </ion-list>
 
 <ion-grid>

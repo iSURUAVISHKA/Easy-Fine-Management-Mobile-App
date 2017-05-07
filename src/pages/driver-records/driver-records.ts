@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CompleteTestService } from './driver-records.service';
 import { NavController } from 'ionic-angular';
+import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
 
 @Component({
   selector: 'page-home',
@@ -26,5 +27,10 @@ export class DriverRecord {
         console.log(this.results)
       });
     
+  }
+    itemTappedHome(){
+    this.navCtrl.setRoot(HomeMenu);
+    // console.log(this.navCtrl);
+    // this.navCtrl.popToRoot();
   }
 }

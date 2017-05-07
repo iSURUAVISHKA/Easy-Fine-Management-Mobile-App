@@ -12,13 +12,11 @@ import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-m
   selector: 'page-reports',
   templateUrl: 'reports.html'
 })
-export class ReportsPage {
+export class ReportsPage2 {
   item:any;
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
 
-  private baseUrl = 'https://finemanagement-d3002.firebaseio.com/';
-  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.item = navParams.get('item');
   }
@@ -31,10 +29,10 @@ export class ReportsPage {
  
             type: 'bar',
             data: {
-                labels: ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                labels: ["January", "February","March", "April", "May", "June", "July"],
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3, 10],
+                    data: [10, 15, 13, 40, 2, 3, 10],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

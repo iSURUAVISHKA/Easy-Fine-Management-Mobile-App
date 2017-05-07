@@ -8,13 +8,13 @@
             <!--<button (click)="goHome()">-->
 <!-->>>>>>> a8cbc240d7be66406b942283567d5ae1f3727cf7:src/pages/home/home.html-->
           <ion-icon name="home"></ion-icon>
-        </button>
+        </button>   
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <img src="/assets/img/27150497-Policeman-fine-icon-Stock-Photo.jpg" class="image" />
+    <img src="assets/img/27150497-Policeman-fine-icon-Stock-Photo.jpg" class="image" />
     <div class="card-title"></div>
     <div class="card-subtitle"></div>
     <ion-list no-lines>
@@ -25,15 +25,20 @@
         </ion-item>
     </ion-list>
 
-    <ion-card class="price">
-        <ion-card-header>
-            Total(Rs):
-        </ion-card-header>
-
-        <ion-card-content>
-            {{ getSum(roadfines) }}
-        </ion-card-content>
-    </ion-card>
+<ion-card class="price">
+    <ion-card-header>
+        Total(Rs):
+    </ion-card-header>
+    <ion-card-content>
+        {{ getSum(roadfines) }}
+    </ion-card-content>
+    <ion-card-header>
+        Points:
+    </ion-card-header>
+    <ion-card-content>
+        {{ getSum1(roadfines) }}
+    </ion-card-content>
+</ion-card>
 
     <button ion-button block (click)="itemTapped($event, item)" color="Secondary">Pass Details</button>
 </ion-content>

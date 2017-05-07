@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color='primary'>
     <ion-title>
-        Road Fines
+      Road Fines
     </ion-title>
     <ion-buttons end>
       <button (click)="goHome()">
@@ -12,21 +12,25 @@
 </ion-header>
 
 <ion-content padding>
+  <img src="assets/img/27150497-Policeman-fine-icon-Stock-Photo.jpg" class="image" />
+  <div class="card-title"></div>
+  <div class="card-subtitle"></div>
   <ion-list no-lines class="item">
 
-  <ion-item *ngFor="let fine of fines">
-    <ion-label>{{fine.name}}</ion-label>
-    <ion-checkbox [(ngModel)]="fine.status" color="dark"></ion-checkbox>
-  </ion-item>
-</ion-list>
+    <ion-item *ngFor="let fine of vehiclefines">
+      <ion-label>{{ fine.name }}</ion-label>
+      <ion-checkbox [(ngModel)]="fine.status" color="dark"></ion-checkbox>
+    </ion-item>
+  </ion-list>
 
   <ion-card>
-  <ion-card-header>
-    Total(Rs):
-  </ion-card-header>
+    <ion-card-header>
+      Total(Rs):
+    </ion-card-header>
 
-  <ion-card-content>
-    {{getSum(fines)}}
-  </ion-card-content>
-</ion-card>
+    <ion-card-content>
+      {{ getSum(vehiclefines) }}
+    </ion-card-content>
+  </ion-card>
+   <button ion-button block (click)="itemTapped($event, item)" color="Secondary">Pass Details</button>
 </ion-content>

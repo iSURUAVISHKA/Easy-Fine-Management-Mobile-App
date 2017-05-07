@@ -1,8 +1,16 @@
 <ion-header>
-  <ion-navbar color='theme1'>
-    <ion-title>Driver Records Management</ion-title>
-  </ion-navbar>
-
+    <ion-navbar color='primary'>
+        <ion-title>Driver Record Management</ion-title>
+        <ion-buttons end>
+<!--<<<<<<< HEAD:src/pages/Vehicle/home.html-->
+        <button (click)="itemTappedHome()">
+<!--=======-->
+            <!--<button (click)="goHome()">-->
+<!-->>>>>>> a8cbc240d7be66406b942283567d5ae1f3727cf7:src/pages/home/home.html-->
+          <ion-icon name="home"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
 
 
@@ -11,7 +19,7 @@
 
   <!--div class="Background1"></div-->
   <ion-card-content fixed color='theme2'>
-    <p>Enter the driver licence number in the search bar given below to get the driver details</p>
+    <p>Enter the driver NIC number in the search bar given below to get the driver details</p>
   </ion-card-content>
 
   <ion-auto-complete [dataProvider]="completeTestService" (itemSelected)="loadSelection($event)" #searchbar></ion-auto-complete>
@@ -51,9 +59,9 @@
       <div class="col"><b>Penalty points</b></div>
     </div>-->
 
-  <div class="row">
-    <div class="col"><b>History of the drivers</b></div>
-  </div>
+  <!--<div class="row">-->
+    <div class = "header"><b>History of the drivers</b></div>
+  <br/>
   <table class="fullwidth">
       <tr class="row">
         <th class="col"><b>Date</b></th>

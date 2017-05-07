@@ -1,32 +1,59 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavParams, LoadingController, NavController } from 'ionic-angular';
+import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
+import { FineManagement } from "../shared/fine-management";
 
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
 })
 export class AboutPage {
+    vehiclefines:any;
 
-  fines = [
-    {id:1, name:'Speeding', amount:1000, status:false},
-    {id:2, name:'Overtaking', amount:1500, status:false},
-    {id:3, name:'Drunk', amount:2000, status:false},
-    {id:4, name:'Modify', amount:1000, status:false},
-    {id:5, name:'Noise', amount:500, status:false},
-  ];
-       getSum=function getSum(source){
+      constructor(public navCtrl: NavController,               
+              public navParams: NavParams, 
+              public finemgt:FineManagement,
+              public loadingController: LoadingController) {
+      // this.navParam.data(ContactPage,{
+      //   param1:"{{getSum(fines)}}"
+      // });
+      console.log(this.vehiclefines);
+  }
+
+       ionViewDidLoad(){
+        let loader = this.loadingController.create({
+          content: 'Getting Fines...'
+          //spinner: 'dots'
+        });
+        loader.present().then(() => {
+          this.finemgt.getRoadfines().then(data => this.vehiclefines = data).then(d => {
+            this.vehiclefines.map(function (item) {
+              item['status'] = false;
+              return item;
+            })
+            loader.dismiss();
+          });
+        })
+
+      }
+     
+    getSum=function getSum(source){
+      
       var sum = 0.0;
-      source.forEach(function(item){
+      if(source != undefined)
+      {
+        source.forEach(function(item){
         if(item.status){
           sum +=
           parseFloat(item.amount);
         }
-      });
+        });
+      }
       return sum;
     }
     
-  constructor(public navCtrl: NavController) {
+     goHome(){
+    this.navCtrl.setRoot(HomeMenu);
   }
- 
 }

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+  <ion-title>Member Adding</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addmem()" color="secondary">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons> 
+ </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding >
+
+ <h4>Cuttent members</h4>
+  <ion-list>
+  <ion-item-sliding *ngFor="let book of books | async">
+  <button ion-item  >
+    <p>Member ID: {{book.author}}</p>
+	<p>Member Password: {{book.title}}</p>
+  </button>  
+  <ion-item-options slide="left">
+  <button ion-button color="secondary" (click)="editmem(book)">
+  <ion-icon name="md-create">Edit</ion-icon>
+  </button>
+  </ion-item-options>
+  <ion-item-options side="left">
+   <button ion-button color="danger" (click)="delmem(book.$key)">
+  <ion-icon name="md-trash">Delete</ion-icon>
+  </button>
+  </ion-item-options>
+  </ion-item-sliding>
+  
+  
+  
+</ion-list>
+
+
+
+
+
+
+
+</ion-content>

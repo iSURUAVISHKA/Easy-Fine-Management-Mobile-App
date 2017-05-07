@@ -16,7 +16,7 @@ import { Observable } from 'rxjs/observable';
 export class CompleteTestService implements AutoCompleteService {
   items:any;
   labelAttribute = "NIC";
-  private baseUrl = 'https://search-421fe.firebaseio.com/';
+  private baseUrl = 'https://finemanagement-d3002.firebaseio.com/';
 
   constructor(private http:Http) {
     // this.ionViewDidLoad();

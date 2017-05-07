@@ -6,6 +6,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { HomeScreen } from '../pages/home-screen/home-screen';
 // import { FineManagement } from '/Users/isuruavishka/finemgt/src/pages/shared/fine-management.ts';
 import { FineManagement } from "../pages/shared/fine-management";
+import { Login} from '../pages/login/login';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { FineManagement } from "../pages/shared/fine-management";
   providers:[FineManagement, HttpModule,HomeScreen]
 })
 export class MyApp {
-  rootPage = HomeScreen;
+  rootPage = Login;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

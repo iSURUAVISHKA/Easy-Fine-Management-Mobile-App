@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="homenav">
+    <ion-title>
+      HOME
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home-background">
+    <!--<ion-slides  pager=true>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.MediaUrl">
+    </ion-slide>
+  </ion-slides>-->
+
+
+<ion-grid class="grid-slide">
+  <ion-row id="r">
+    <ion-col id="c">
+      <ion-slides (ionSlideDidChange)="slideChanged()" pager autoplay="2000">
+        <ion-slide *ngFor="let a of pics">
+          <h1><img [src]="a.url"></h1>
+
+        </ion-slide>
+
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<br/>
+
+<div>
+  <button ion-button icon-left full (click)="itemTapped($event, item)" class="colour1">
+    <ion-icon  name="ios-hand"></ion-icon> 
+    Fine Management
+  </button>
+<br/>
+  <button ion-button icon-left full (click)="itemTapped1($event, item)" class="colour2">
+    <ion-icon name="ios-contact"></ion-icon>
+      Account Management
+  </button>
+<br/>
+  <button ion-button icon-left full (click)="itemTapped2($event, item)" class="colour3">
+    <ion-icon name="ios-clipboard"></ion-icon>
+      View Records
+  </button>
+<br/>
+  <button ion-button icon-left full (click)="itemTapped3($event, item)" class="colour4">
+    <ion-icon name="ios-contacts"></ion-icon>
+      Driver Records Management
+  </button>
+</div>
+
+</ion-content>
