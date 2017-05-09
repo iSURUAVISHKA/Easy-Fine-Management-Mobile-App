@@ -3,10 +3,14 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
-import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
-import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
-import { TabsPageM } from '/Users/isuruavishka/finemgt/src/pages/tabs-m/tabs';
-import { AddUser } from '/Users/isuruavishka/finemgt/src/pages/add-user/add-user';
+import { TabsPage } from "../tabs/tabs";
+import { AddUser } from "../add-user/add-user";
+import { TabsPageM } from "../tabs-m/tabs";
+import { TabsPageK } from "../tabs-k/tabs";
+// import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
+// import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
+// import { TabsPageM } from '/Users/isuruavishka/finemgt/src/pages/tabs-m/tabs';
+// import { AddUser } from '/Users/isuruavishka/finemgt/src/pages/add-user/add-user';
 
 @Component({
   selector: 'page-contact',

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
-import {FirebaseListObservable, AngularFire} from 'angularfire2';
+// import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
+import { FirebaseListObservable, AngularFire } from 'angularfire2';
+import { HomeMenu } from "../home-menu/home-menu";
 
 
 @Component({

@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '/Users/isuruavishka/finemgt/src/pages/Vehicle/home';
-import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
-import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
-import { TabsPageM } from '/Users/isuruavishka/finemgt/src/pages/tabs-m/tabs';
-import { AddUser } from '/Users/isuruavishka/finemgt/src/pages/add-user/add-user';
+// import { HomePage } from '/Users/isuruavishka/finemgt/src/pages/Vehicle/home';
+// import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
+// import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
+// import { TabsPageM } from '/Users/isuruavishka/finemgt/src/pages/tabs-m/tabs';
+// import { AddUser } from '/Users/isuruavishka/finemgt/src/pages/add-user/add-user';
 //import { ViewRecordsPage } from '/Users/isuruavishka/finemgt/src/pages/home-screen/home-screen.ts';
 import { ReportsPage } from '../reports/reports.ts';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
+import { TabsPage } from "../tabs/tabs";
+import { TabsPageK } from "../tabs-k/tabs";
+import { TabsPageM } from "../tabs-m/tabs";
+import { AddUser } from "../add-user/add-user";
 
 @Component({
   selector: 'page-home',

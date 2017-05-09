@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 import { NavParams, LoadingController, NavController } from 'ionic-angular';
-import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
+// import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
 import { FineManagement } from "../shared/fine-management";
+import { HomeMenu } from "../home-menu/home-menu";
 
 @Component({
   selector: 'page-about',

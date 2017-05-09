@@ -4,7 +4,8 @@ import { List } from 'ionic-angular';
 import { ReportsPage } from '../reports/reports.ts';
 import { ReportsPage2 } from '../reports/reports2.ts';
 import { ReportsPage3 } from '../reports/reports3.ts';
-import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
+import { HomeMenu } from "../home-menu/home-menu";
+// import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
 @Component({
   selector: 'page-view-records',
   templateUrl: 'view-records.html'

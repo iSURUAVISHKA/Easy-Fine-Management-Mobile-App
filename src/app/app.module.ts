@@ -9,8 +9,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TabsPageK } from '../pages/tabs-k/tabs';
 import { HomeScreen } from '../pages/home-screen/home-screen';
 import { HomeMenu } from '../pages/home-menu/home-menu';
-import { DriverRecord } from '/Users/isuruavishka/finemgt/src/pages/driver-records/driver-records.ts';
-import { RecordInfo } from '/Users/isuruavishka/finemgt/src/pages/record-information/record-information.ts';
 import { AutoCompleteModule } from 'ionic2-auto-complete';
 import { BrowserModule } from '@angular/platform-browser';
 import { ViewRecordsPage } from "../pages/view-records/view-records";
@@ -24,6 +22,8 @@ import { HttpModule } from '@angular/http'
 import { TabsPageM } from '../pages/tabs-m/tabs';
 import { AddUser } from '../pages/add-user/add-user';
 import { AngularFireModule } from 'angularfire2';
+import { DriverRecord } from "../pages/driver-records/driver-records";
+import { RecordInfo } from "../pages/record-information/record-information";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBLtOuh487QT0H4CF2VE-Ya6_BBBDC5bPM",

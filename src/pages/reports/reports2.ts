@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
-import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
+import { HomeMenu } from "../home-menu/home-menu";
+// import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
 /*
   Generated class for the Reports page.
 
