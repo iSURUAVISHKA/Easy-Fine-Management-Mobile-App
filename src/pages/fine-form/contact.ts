@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import { FirebaseListObservable, AngularFire } from 'angularfire2';
 import { HomeMenu } from "../home-menu/home-menu";
 
+import { SMS } from '@ionic-native/sms';
+
 
 @Component({
   selector: 'page-contact',
@@ -23,7 +25,7 @@ export class ContactPage {
   public policeStation: any;
   public myDate: any;
 
-  constructor(public navCtrl: NavController,public angFire:AngularFire) {
+  constructor(public navCtrl: NavController,public angFire:AngularFire, private smsVar: SMS) {
 
       this.dbfine = angFire.database.list("/items");
 
@@ -50,9 +52,29 @@ export class ContactPage {
       contact: this.phoneNo,
       policeStation: this.policeStation
     });
-    this.navCtrl.pop(this);
+    var phoneNo = this.phoneNo;
+    var messageBody = 'You have committed following violations ' + this.fineNames + '. You will be fined an amount of ' + this.amount +'.';
+
+    this.sendSMS(phoneNo,messageBody);
   }
     goHome(){
     this.navCtrl.setRoot(HomeMenu);
+  }
+
+  sendSMS(phoneNo,messageBody){
+    var options={
+          replaceLineBreaks: false, // true to replace \n by a new line, false by default
+          android: {
+               intent: 'INTENT'  // Opens Default sms app
+              //intent: '' // Sends sms without opening default sms app
+            }
+    }
+    this.smsVar.send(phoneNo, messageBody,options)
+      .then(()=>{
+        this.navCtrl.pop(this);
+        alert("success");
+      },()=>{
+      alert("failed");
+      });
   }
 }

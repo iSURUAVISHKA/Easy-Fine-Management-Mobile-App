@@ -21,6 +21,7 @@ import { HomeMenu } from "../home-menu/home-menu";
 })
 export class HomePage {
   roadfines: any;
+  category: any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -120,5 +121,9 @@ export class HomePage {
     }
     localStorage.setItem("amount", this.getSum(this.roadfines).toString());
     this.navCtrl.setRoot(HomeMenu);
+  }
+
+  checkedDone(){
+    console.log("Cicked");
   }
 }

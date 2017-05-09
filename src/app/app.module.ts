@@ -24,6 +24,7 @@ import { AddUser } from '../pages/add-user/add-user';
 import { AngularFireModule } from 'angularfire2';
 import { DriverRecord } from "../pages/driver-records/driver-records";
 import { RecordInfo } from "../pages/record-information/record-information";
+import { SMS } from "@ionic-native/sms";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBLtOuh487QT0H4CF2VE-Ya6_BBBDC5bPM",
@@ -85,6 +86,6 @@ export const firebaseConfig = {
     AddUser,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},HttpModule,
-  AuthService]
+  AuthService,SMS]
 })
 export class AppModule {}
