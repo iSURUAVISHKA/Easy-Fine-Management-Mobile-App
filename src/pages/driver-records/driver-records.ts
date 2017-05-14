@@ -16,6 +16,9 @@ export class DriverRecord {
   searchNic: string = '';
   items: any[];
   result: any[];
+  violations : any;
+  nicDetails : any;
+
   constructor(public navCtrl: NavController, public completeTestService: CompleteTestService) {
 
   }
@@ -24,8 +27,26 @@ export class DriverRecord {
     this.searchbar.getValue();
     console.log(this.searchbar.getValue());
     this.completeTestService.getResultsForNIC(this.searchbar.getValue()).then(data => {
+        
+        // calculate tot. no. of broken laws.
+        var count_brkn_laws = 0;
+        for(var i in data) {
+	        count_brkn_laws += data[i].brokenlaw.split(",").length;
+        }
+
         this.results = data;
-        console.log(this.results)
+        var penaltyPointCount = 0;
+        var penaltyCount = 0;
+        this.results.forEach(item =>{
+          penaltyPointCount += parseInt(item.penalitypoints);
+          penaltyCount++;
+        });
+        localStorage.setItem("penaltyCount", penaltyPointCount.toString());
+        localStorage.setItem("penaltyOccurance", penaltyCount.toString());
+        localStorage.setItem("brokenLaws", count_brkn_laws.toString());
+        this.violations = this.results;
+        this.nicDetails = [];
+        this.nicDetails.push(this.results[0]); 
       });
     
   }

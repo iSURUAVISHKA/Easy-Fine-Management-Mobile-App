@@ -15,30 +15,33 @@ import { Observable } from 'rxjs/observable';
 })
 export class CompleteTestService implements AutoCompleteService {
   items:any;
-  labelAttribute = "NIC";
+  labelAttribute = "licenseNo";
   private baseUrl = 'https://finemanagement-d3002.firebaseio.com/';
 
   constructor(private http:Http) {
     // this.ionViewDidLoad();
   }
-  getResults(keyword:string) {
-        return this.http.get(`${this.baseUrl}/items.json`)
-                .map(
-                    result => {
-                        return result.json()
-                        .filter(item => item.NIC.toLowerCase().startsWith(keyword.toLowerCase()));
-                    }
-                );
+  getResults(keyword: string) {
+
+    return this.http.get(`${this.baseUrl}/items.json`)
+      .map(
+      result => {
+        return Object.keys(result.json())
+        .map(key => result.json()[key]).filter(item => item.licenseNo.toLowerCase().startsWith(keyword.toLowerCase()));
+      }
+      );
   }
 
-  getResultsForNIC(keyword:string){
-          var ob = new Promise(resolve =>{
-            this.http.get(`${this.baseUrl}/items.json`)
-                .subscribe(res => resolve(res.json().filter(item => {
-                return item.NIC == keyword;     
-            })));
-        });
-        return ob;
+  getResultsForNIC(keyword: string) {
+    var ob = new Promise(resolve => {
+      this.http.get(`${this.baseUrl}/items.json`)
+        .subscribe(res => resolve(
+          Object.keys(res.json()).map(key => res.json()[key]).filter(item => {
+            return item.licenseNo == keyword;
+          })));
+
+    });
+    return ob;
   }
 
 }

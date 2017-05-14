@@ -23,7 +23,7 @@
   </ion-card-content>
 
   <ion-auto-complete [dataProvider]="completeTestService" (itemSelected)="loadSelection($event)" #searchbar></ion-auto-complete>
-  <ion-list *ngFor="let item of results">
+  <ion-list *ngFor="let item of nicDetails">
     <ion-item color='theme2' >
       <ion-label floating>NIC no:</ion-label>
       <ion-input type="text" [(ngModel)]="item.NIC">{{item.NIC}}</ion-input>
@@ -68,7 +68,7 @@
         <th class="col"><b>Broken Law</b></th>
         <th class="col"><b>Penalty points</b></th>
       </tr>
-        <tr class="row" *ngFor="let item of results">
+        <tr class="row" *ngFor="let item of violations">
         <td class="col"><b>{{item.date}}</b></td>
         <td class="col"><b>{{item.brokenlaw}}</b></td>
         <td class="col"><b>{{item.penalitypoints}}</b></td>

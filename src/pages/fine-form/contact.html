@@ -10,69 +10,80 @@
 </ion-header>
 
 <ion-content class="grid-basic-page">
-<ion-list>
 
-  <h1 ng-bind="userId">{{ userId }}</h1>
+ 
+  <ion-list>
+  <form [formGroup]="form1">
+    <h1 ng-bind="userId">{{ userId }}</h1>
+    <ion-item>
+      <ion-label floating>Licence No:</ion-label>
+      <ion-input type="text" formControlName="licenseNo"
+      [class.invalid]="!form1.controls.licenseNo.valid && form1.controls.licenseNo.dirty"
+       [(ngModel)]="licenseNo" ></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Licence No:</ion-label>
-    <ion-input type="text" required [(ngModel)]="licenseNo"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Driver Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="driverName" formControlName="driverName"
+      [class.invalid]="!form1.controls.driverName.valid && form1.controls.driverName.dirty">
+      </ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Driver Name:</ion-label>
-    <ion-input type="text" [(ngModel)]="driverName"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Address:</ion-label>
+      <ion-input type="text" [(ngModel)]="address" formControlName="address"
+      [class.invalid]="!form1.controls.address.valid && form1.controls.address.dirty"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Address:</ion-label>
-    <ion-input type="text" [(ngModel)]="address"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Fine:</ion-label>
+      <ion-input type="text" [(ngModel)]="fineNames" formControlName="fineNames" [readonly]="true"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Fine:</ion-label>
-    <ion-input type="text" [(ngModel)]="fineNames"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Penality Points:</ion-label>
+      <ion-input type="text" [(ngModel)]="points" formControlName="points" [readonly]="true"></ion-input>
+    </ion-item>
 
-<ion-item>
-  <ion-label floating>Penality Points:</ion-label>
-  <ion-input type="text" [(ngModel)]="points"></ion-input>
-</ion-item>
+    <ion-item>
+      <ion-label floating>Amount:</ion-label>
+      <ion-input type="text" [(ngModel)]="amount" formControlName="amount" [readonly]="true"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Amount:</ion-label>
-    <ion-input type="text" [(ngModel)]="amount"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Phone No:</ion-label>
+      <ion-input type="text" [(ngModel)]="phoneNo"formControlName="phoneNo"
+      [class.invalid]="!form1.controls.phoneNo.valid && form1.controls.phoneNo.dirty"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Phone No:</ion-label>
-    <ion-input type="text" [(ngModel)]="phoneNo"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label floating>Police Station:</ion-label>
+      <ion-input type="text" [(ngModel)]="policeStation" formControlName="policeStation"
+      [class.invalid]="!form1.controls.policeStation.valid && form1.controls.policeStation.dirty"></ion-input>
+    </ion-item><br/>
 
-  <ion-item>
-    <ion-label floating>Police Station:</ion-label>
-    <ion-input type="text" [(ngModel)]="policeStation"></ion-input>
-  </ion-item><br/>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" formControlName="myDate"></ion-datetime>
+    </ion-item>
 
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-</ion-list>
-
-<ion-grid>
-  <ion-row> 
-      <div padding>
-        <button ion-button icon-right  color='secondary' (click)="addFine()">Send
+    <ion-grid>
+      <ion-row>
+        <div padding>
+          <button ion-button icon-right color='secondary' (click)="addFine()">Send
           <ion-icon name="mail"></ion-icon>
         </button>
-      </div>  
+        </div>
 
-      <div padding>
-        <button ion-button icon-right block color='primary'>Reset
+        <div padding>
+          <button ion-button icon-right block color='primary'>Reset
           <ion-icon name="refresh-circle"></ion-icon>
         </button>
-      </div>
-  </ion-row>
-</ion-grid>
+        </div>
+      </ion-row>
+    </ion-grid>
+    </form>
+  </ion-list>
+
+
 </ion-content>

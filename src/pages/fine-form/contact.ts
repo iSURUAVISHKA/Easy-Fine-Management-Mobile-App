@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-// import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
 import { FirebaseListObservable, AngularFire } from 'angularfire2';
 import { HomeMenu } from "../home-menu/home-menu";
-
 import { SMS } from '@ionic-native/sms';
-
+import { FormBuilder, Validators, FormGroup, ReactiveFormsModule, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
+ 
+  private form1:FormGroup;
+  submitAttempt: boolean = false;
 
   dbfine:FirebaseListObservable<any>;
   public userId : any;
@@ -25,7 +26,9 @@ export class ContactPage {
   public policeStation: any;
   public myDate: any;
 
-  constructor(public navCtrl: NavController,public angFire:AngularFire, private smsVar: SMS) {
+  constructor(public navCtrl: NavController,public angFire:AngularFire, 
+              private smsVar: SMS,
+              public formBuilder: FormBuilder) {
 
       this.dbfine = angFire.database.list("/items");
 
@@ -35,7 +38,19 @@ export class ContactPage {
       this.points = localStorage.getItem("points");
       console.log(this.amount);
 
-      
+this.form1 = formBuilder.group({
+        licenseNo: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[0-9]*'), Validators.required])],
+        driverName:['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required])],
+        address:['',Validators.compose([Validators.maxLength(30), Validators.pattern('[0-9]*[a-zA-Z]*'), Validators.required])],
+        fineNames:[''],
+        points:[''],
+        amount:[''],
+        phoneNo:['', Validators.compose([Validators.maxLength(30), Validators.pattern('[0-9]*'), Validators.required])],
+        policeStation:['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required])],
+        myDate:['']
+   });
+ 
+
   }
 
   addFine() {
