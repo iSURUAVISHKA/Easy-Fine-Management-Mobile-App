@@ -16,7 +16,6 @@ import { ReportsPage } from "../pages/reports/reports";
 import { ReportsPage2 } from "../pages/reports/reports2";
 import { ReportsPage3 } from "../pages/reports/reports3";
 import { Login } from '../pages/login/login';
-import { AuthService } from '../providers/auth-service';
 import { Register } from '../pages/register/register';
 import { HttpModule } from '@angular/http'
 import { TabsPageM } from '../pages/tabs-m/tabs';
@@ -85,7 +84,6 @@ export const firebaseConfig = {
     Register,
     AddUser,
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},HttpModule,
-  AuthService,SMS]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},HttpModule,SMS]
 })
 export class AppModule {}
