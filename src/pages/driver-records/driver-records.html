@@ -22,7 +22,7 @@
     <p>Enter the driver NIC number in the search bar given below to get the driver details</p>
   </ion-card-content>
 
-  <ion-auto-complete [dataProvider]="completeTestService" (itemSelected)="loadSelection($event)" #searchbar></ion-auto-complete>
+  <ion-auto-complete [class.invalid]="false" [dataProvider]="completeTestService" (itemSelected)="loadSelection($event)" #searchbar></ion-auto-complete>
   <ion-list *ngFor="let item of nicDetails">
     <ion-item color='theme2' >
       <ion-label floating>NIC no:</ion-label>
