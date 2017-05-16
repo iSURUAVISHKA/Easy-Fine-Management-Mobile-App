@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { HomeMenu } from "../home-menu/home-menu";
+import { SQLite } from "ionic-native/dist/es5";
 // import { HomeMenu } from '/Users/isuruavishka/finemgt/src/pages/home-menu/home-menu.ts';
 /*
   Generated class for the Reports page.
@@ -14,7 +15,9 @@ import { HomeMenu } from "../home-menu/home-menu";
   templateUrl: 'reports.html'
 })
 export class ReportsPage {
+    public database: SQLite;
   item:any;
+  people:any;
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
 
@@ -22,6 +25,19 @@ export class ReportsPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.item = navParams.get('item');
+
+            this.database.executeSql("SELECT * FROM fines", []).then((data) => {
+            this.people = [];
+            if(data.rows.length > 0) {
+                for(var i = 0; i < data.rows.length; i++) {
+                    this.people.push({firstname: data.rows.item(i).firstname, lastname: data.rows.item(i).lastname});
+                }
+
+                console.log("items: " + this.people);
+            }
+        }, (error) => {
+            console.log("ERROR: " + JSON.stringify(error));
+        });
   }
 
   ionViewDidLoad() {
