@@ -18,6 +18,7 @@ import { database } from "firebase/app";
 export class ReportsPage {
   item:any;
   people:any;
+  fines = [];
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
     database = new SQLite();
@@ -25,37 +26,50 @@ export class ReportsPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('item');
+  }
+
+  dateBefore(){
+      for(var days = 7; days>0; days--){
+        var date = new Date();
+        var last = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000));
+        var day =last.getDate();
+        var month=last.getMonth()+1;
+        var year=last.getFullYear();
+        console.log(year+'-'+month+'-'+(day<10?'0'+day:day));
+        this.retrieveItems(year+'-'+(month<10?'0'+month:month)+'-'+(day<10?'0'+day:day));
+      }
+      console.log('done');
+  }
+
+  retrieveItems(date){
+      var sum = 0;
     this.database.openDatabase({
                 name: "data.db",
                 location: "default"
-            });
-  }
-
-  retrieveItems(){
-    this.database.executeSql("SELECT * FROM fines", []).then((data) => {
+    }).then(() => {
+    this.database.executeSql("SELECT * FROM fines WHERE fineDate='"+date+"'", []).then((data) => {
         if(data.rows.length > 0) {
             for(var i = 0; i < data.rows.length; i++) {
                 console.log(data.rows.item(i).amount);
+                sum += data.rows.item(i).amount;
             }
+            this.fines.push(sum);
+            console.log("fines: " + this.fines);
+        }else{
+            this.fines.push(0);
         }
-    }, (error) => {
-        console.log("ERROR: " + JSON.stringify(error));
-    });
 
-  }
+        if(this.fines.length == 7){
+            console.log('done');
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ReportsPage');
-    console.log('item'+ JSON.stringify(this.item));
-
-    this.barChart = new Chart(this.barCanvas.nativeElement, {
+      this.barChart = new Chart(this.barCanvas.nativeElement, {
  
             type: 'bar',
             data: {
                 labels: ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3, 10],
+                    data: this.fines,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -88,6 +102,21 @@ export class ReportsPage {
             }
  
         });
+        }
+    }, (error) => {
+        console.log("ERROR: " + JSON.stringify(error));
+    });
+}, (error) => {
+                console.error("Unable to open database", error);
+            });
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ReportsPage');
+    console.log('item'+ JSON.stringify(this.item));
+    this.dateBefore();
+
+    
 }
 
     goHome(){
