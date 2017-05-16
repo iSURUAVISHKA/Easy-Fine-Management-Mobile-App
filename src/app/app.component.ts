@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { SQLite } from 'ionic-angular/sqlite';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar, Splashscreen, SQLite } from 'ionic-native';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomeScreen } from '../pages/home-screen/home-screen';
