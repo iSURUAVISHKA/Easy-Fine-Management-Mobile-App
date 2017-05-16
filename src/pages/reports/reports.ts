@@ -19,6 +19,7 @@ export class ReportsPage {
   item:any;
   people:any;
   fines = [];
+  lastDays = [];
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
     database = new SQLite();
@@ -37,6 +38,11 @@ export class ReportsPage {
         var year=last.getFullYear();
         console.log(year+'-'+month+'-'+(day<10?'0'+day:day));
         this.retrieveItems(year+'-'+(month<10?'0'+month:month)+'-'+(day<10?'0'+day:day));
+
+        var date = new Date((month<10?'0'+month:month)+'/'+(day<10?'0'+day:day)+'/'+year),
+        locale = "en-us";
+        this.lastDays.push(''+date.toLocaleString(locale, { month: "long" }));
+        console.log(this.lastDays);
       }
       console.log('done');
   }
@@ -66,7 +72,7 @@ export class ReportsPage {
  
             type: 'bar',
             data: {
-                labels: ["Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                labels: this.lastDays,
                 datasets: [{
                     label: '# of Votes',
                     data: this.fines,
