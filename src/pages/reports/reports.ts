@@ -41,7 +41,7 @@ export class ReportsPage {
 
         var date = new Date((month<10?'0'+month:month)+'/'+(day<10?'0'+day:day)+'/'+year),
         locale = "en-us";
-        this.lastDays.push(''+date.toLocaleString(locale, { month: "long" }));
+        this.lastDays.push(''+date.toLocaleString(locale, { weekday: "long" }));
         console.log(this.lastDays);
       }
       console.log('done');
