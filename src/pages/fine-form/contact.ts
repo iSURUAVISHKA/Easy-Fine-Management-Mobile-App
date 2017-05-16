@@ -92,4 +92,16 @@ this.form1 = formBuilder.group({
       alert("failed");
       });
   }
+
+  reset(){
+    this.amount = null;
+    this.address= null;
+    this.driverName= null;
+    this.fineNames= null;
+    this.licenseNo= null;
+    this.myDate= null;
+    this.phoneNo= null;
+    this.policeStation= null;
+    this.points= null;
+  }
 }

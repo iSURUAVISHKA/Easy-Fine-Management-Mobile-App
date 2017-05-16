@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content padding>
-  <img src="assets/img/27150497-Policeman-fine-icon-Stock-Photo.jpg" class="image" />
+  <img src="assets/img/Untitled-4.jpg" class="image" />
   <div class="card-title"></div>
   <div class="card-subtitle"></div>
   <ion-list no-lines class="item">
@@ -24,13 +24,19 @@
   </ion-list>
 
   <ion-card>
-    <ion-card-header>
-      Total(Rs):
-    </ion-card-header>
+  <ion-card-header>
+    Total(Rs):
+  </ion-card-header>
 
-    <ion-card-content>
-      {{ getSum(vehiclefines) }}
-    </ion-card-content>
-  </ion-card>
+  <ion-card-content>
+    {{ getSum(vehiclefines) }}
+  </ion-card-content>
+  <ion-card-header>
+    Points:
+  </ion-card-header>
+  <ion-card-content>
+    {{ getSum1(vehiclefines) }}
+  </ion-card-content>
+</ion-card>
    <button ion-button block (click)="itemTapped($event, item)" color="Secondary">Pass Details</button>
 </ion-content>

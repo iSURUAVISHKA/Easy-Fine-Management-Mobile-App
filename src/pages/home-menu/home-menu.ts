@@ -7,10 +7,6 @@ import { TabsPage } from "../tabs/tabs";
 import { AddUser } from "../add-user/add-user";
 import { TabsPageM } from "../tabs-m/tabs";
 import { TabsPageK } from "../tabs-k/tabs";
-// import { TabsPage } from '/Users/isuruavishka/finemgt/src/pages/tabs/tabs';
-// import { TabsPageK } from '/Users/isuruavishka/finemgt/src/pages/tabs-k/tabs';
-// import { TabsPageM } from '/Users/isuruavishka/finemgt/src/pages/tabs-m/tabs';
-// import { AddUser } from '/Users/isuruavishka/finemgt/src/pages/add-user/add-user';
 
 @Component({
   selector: 'page-contact',
@@ -21,8 +17,6 @@ export class HomeMenu {
   constructor(public navCtrl: NavController) {
 
   }
-  // mySlideOptions = {pager:true};
-  // slides = [{"MediaUrl" : "images/1d.jpg"},{"MediaUrl" : "images/penalty.jpg"}]
 
  @ViewChild(Slides) slides: Slides;
 
@@ -33,13 +27,22 @@ export class HomeMenu {
 
   pics:any[]=[
 {
-  "url":"/assets/img/27150497-Policeman-fine-icon-Stock-Photo.jpg",
+  "url":"assets/img/Untitled-4.jpg",
 },
 {
-  "url":"/assets/img/FreeVector-Vehicle-Icons-Graphics.jpg",
+  "url":"assets/img/Untitled-5.jpg",
 },
 {
-  "url":"/assets/img/POLICE.png",
+  "url":"assets/img/Untitled-2.jpg",
+},
+{
+  "url":"assets/img/Untitled-3.jpg",
+},
+{
+  "url":"assets/img/Untitled-6.jpg",
+},
+{
+  "url":"assets/img/Untitled-7.jpg",
 }
 
 

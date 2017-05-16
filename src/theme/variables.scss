@@ -37,7 +37,14 @@ homenav: #005266
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+.home-background{
+  background-image: url('../assets/img/background.jpg');
+  background-size: contain;
+}
+.vehicle-fine{
+  //   background-image: url('../assets/img/papers.co-vd97-dark-line-abstract-digital-graphic-art-34-iphone6-plus-wallpaper.jpg');
+  // background-size: contain;
+}
 
 
 

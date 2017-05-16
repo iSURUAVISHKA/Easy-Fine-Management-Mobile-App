@@ -1,11 +1,13 @@
-page-contact {
-
-}
         ion-input, ion-select, ion-textarea {
             background-color: #f2f2f2;
             padding: 5px 10px;
         }
 
-                .invalid {
+        .invalid {
             border: 1px solid #ea6153;
+        }
+
+        .header{
+            text-align: center;
+            font-size: 10px; 
         }

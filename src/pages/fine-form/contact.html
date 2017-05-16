@@ -14,7 +14,14 @@
  
   <ion-list>
   <form [formGroup]="form1">
-    <h1 ng-bind="userId">{{ userId }}</h1>
+    <ion-item no-lines>
+      <ion-avatar item-left>
+        <img src="assets/img/person-outline-icon-png-person-outline-icon-png-person-17.png">
+      </ion-avatar>
+      <h1>{{ userId }}</h1>
+    </ion-item>
+    
+    
     <ion-item>
       <ion-label floating>Licence No:</ion-label>
       <ion-input type="text" formControlName="licenseNo"
@@ -76,7 +83,7 @@
         </div>
 
         <div padding>
-          <button ion-button icon-right block color='primary'>Reset
+          <button ion-button icon-right block color='primary' (click)="reset()">Reset
           <ion-icon name="refresh-circle"></ion-icon>
         </button>
         </div>
