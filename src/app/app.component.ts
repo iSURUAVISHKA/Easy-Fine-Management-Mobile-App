@@ -42,6 +42,39 @@ export class MyApp {
                     db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-09\', 900.00);', {});
                     db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-07\', 7900.00);', {});
                     db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-12\', 750.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-04-05\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-04-09\', 900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-04-07\', 7900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-04-12\', 750.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-03-05\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-03-09\', 900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-03-07\', 7900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-03-12\', 750.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-02-12\', 6700.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-02-06\', 4500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-02-05\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-02-09\', 900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-02-07\', 7900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-01-12\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-01-11\', 2000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-01-12\', 4500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-01-15\', 15000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-01-09\', 7000.00);', {});
+
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-12-05\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-12-09\', 900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-12-07\', 7900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-12-12\', 750.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-11-12\', 6700.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-11-06\', 4500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-11-05\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-11-09\', 900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-11-07\', 7900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-11-12\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-10-11\', 2000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-10-12\', 4500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-10-15\', 15000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2016-09-09\', 7000.00);', {});
                 }, (error) => {
                     console.error("Unable to execute sql", error);
                 })
