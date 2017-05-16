@@ -14,7 +14,7 @@ import { Login} from '../pages/login/login';
 })
 export class MyApp {
   rootPage = Login;
-
+  db = new SQLite();
   constructor(platform: Platform) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -27,12 +27,21 @@ export class MyApp {
                 name: "data.db",
                 location: "default"
             }).then(() => {
-                db.executeSql("CREATE TABLE IF NOT EXISTS fines (id INTEGER PRIMARY KEY AUTOINCREMENT, fineDate DATE, amount FLOAT)", {}).then((data) => {
+                db.executeSql("CREATE TABLE IF NOT EXISTS fines (id INTEGER PRIMARY KEY AUTOINCREMENT, fineDate DATE, amount REAL);", {})
+                .then((data) => {
                     console.log("TABLE CREATED: ", data);
-                    db.transaction(function (tx) {
-                      tx.executeSql('INSERT INTO fines (id, fineDate, amount) VALUES (0, "2017-05-20", 300.00)');
-                      tx.executeSql('INSERT INTO fines (id, fineDate, amount) VALUES (1, "2017-05-20"),5000.00');
-                    });
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-12\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-11\', 2000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-12\', 4500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-15\', 15000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-09\', 7000.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-07\', 6788.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-12\', 6700.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-06\', 4500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-05\', 1500.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-09\', 900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-07\', 7900.00);', {});
+                    db.executeSql('INSERT INTO fines (fineDate, amount) VALUES (\'2017-05-12\', 750.00);', {});
                 }, (error) => {
                     console.error("Unable to execute sql", error);
                 })
